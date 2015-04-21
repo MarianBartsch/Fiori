@@ -1,0 +1,50 @@
+{
+  "run": [
+    {
+      "filePath": "/CRM_OPPRTNTYExtension/Component.js",
+      "previewMode": 0,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "urlParameters": [
+        {
+          "paramName": "",
+          "paramValue": "",
+          "paramActive": true
+        },
+        {
+          "paramName": "",
+          "paramValue": "",
+          "paramActive": true
+        }
+      ],
+      "_metadata": {
+        "id": 4924665,
+        "runnerId": "fiorirunner",
+        "displayName": "New SAP Fiori Component"
+      }
+    },
+    {
+      "filePath": "/CRM_OPPRTNTYExtension/index.html",
+      "previewMode": 0,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "urlParameters": [
+        {
+          "paramName": "",
+          "paramValue": "",
+          "paramActive": true
+        },
+        {
+          "paramName": "",
+          "paramValue": "",
+          "paramActive": true
+        }
+      ],
+      "_metadata": {
+        "id": 6691687,
+        "runnerId": "webapprunner",
+        "displayName": "New Web Application 3"
+      }
+    }
+  ]
+}

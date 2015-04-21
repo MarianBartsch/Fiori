@@ -1,0 +1,42 @@
+{
+  "welcomeFile": "index.html",
+  "routes": [
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "crmmot",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "CRM MOT"
+    },
+    {
+      "path": "/sap/bc/ui5_ui5",
+      "wattUsage": "ui5_execute_abap",
+      "target": {
+        "type": "destination",
+        "name": "crmmot",
+        "entryPath": "/sap/bc/ui5_ui5"
+      },
+      "description": "CRM MOT"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    }
+  ]
+}

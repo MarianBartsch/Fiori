@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:ui="sap.ui.layout" xmlns:layout="sap.ui.layout" xmlns:ca="sap.ca.ui" xmlns="sap.m">
+
+	
+	<!-- This extension point can be used to add fields to content -->
+	 
+		<ui:form.SimpleForm xmlns:ui="sap.ui.layout" id="opportunityLogChange_form_clone">
+								<ui:content>
+									<Label xmlns="sap.m" id="opportunityLogChange_Label_clone" text="{i18n&gt;LOG_CHANGE}">
+									</Label>
+									<Link xmlns="sap.m" text="{i18n&gt;VIEW}" press="onLogChange" id="log_clone"/>
+									
+								</ui:content>
+							
+								
+						
+							
+							</ui:form.SimpleForm> 
+	
+
+</core:FragmentDefinition>
+
+ 
+			

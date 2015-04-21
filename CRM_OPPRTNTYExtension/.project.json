@@ -1,0 +1,150 @@
+{
+  "generation": [
+    {
+      "templateId": "fioriexttemplate.extensionProject",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Tue, 24 Mar 2015 17:15:02 UTC"
+    },
+    {
+      "templateId": "fioriexttemplate.hidecontrolcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Tue, 24 Mar 2015 17:18:06 UTC"
+    },
+    {
+      "templateId": "fioriexttemplate.extendviewcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Wed, 25 Mar 2015 08:11:11 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.replaceviewcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Wed, 25 Mar 2015 08:17:36 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.extendcontrollercomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Wed, 25 Mar 2015 08:46:22 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.extendcontrollercomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Wed, 25 Mar 2015 09:18:28 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.replaceviewcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Wed, 25 Mar 2015 09:31:40 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.extendcontrollercomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Wed, 25 Mar 2015 09:32:21 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.replaceviewcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Tue, 07 Apr 2015 12:45:58 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.i18ncomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Tue, 07 Apr 2015 13:12:07 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.extendcontrollercomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Tue, 07 Apr 2015 14:04:33 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.replaceviewcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Wed, 08 Apr 2015 06:50:20 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.extendcontrollercomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Wed, 08 Apr 2015 06:53:06 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.extendcontrollercomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Mon, 13 Apr 2015 12:26:04 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.extendcontrollercomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Mon, 13 Apr 2015 12:26:28 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.extendcontrollercomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Mon, 13 Apr 2015 13:19:16 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.replaceviewcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Mon, 13 Apr 2015 13:19:43 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.replaceviewcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Mon, 13 Apr 2015 13:25:15 GMT"
+    }
+  ],
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/CRM_OPPORTUNITY",
+    "metadataFilePath": "model/metadata.xml",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "extensibility": {
+    "controllers": {
+      "Main": "CRM_OPPRTNTY%2fMain.controller.js",
+      "S2": "CRM_OPPRTNTY%2fview%2fS2.controller.js",
+      "S3": "CRM_OPPRTNTY%2fview%2fS3.controller.js",
+      "S4": "CRM_OPPRTNTY%2fview%2fS4.controller.js",
+      "S5": "CRM_OPPRTNTY%2fview%2fS5.controller.js"
+    },
+    "views": {
+      "Main": "CRM_OPPRTNTY%2fMain.view.xml",
+      "S2": "CRM_OPPRTNTY%2fview%2fS2.view.xml",
+      "S3": "CRM_OPPRTNTY%2fview%2fS3.view.xml",
+      "S4": "CRM_OPPRTNTY%2fview%2fS4.view.xml",
+      "S5": "CRM_OPPRTNTY%2fview%2fS5.view.xml"
+    },
+    "fragments": {
+      "AccountSelectDialog": "CRM_OPPRTNTY%2fview%2fAccountSelectDialog.fragment.xml",
+      "ChangeLog": "CRM_OPPRTNTY%2fview%2fChangeLog.fragment.xml",
+      "ContactF4": "CRM_OPPRTNTY%2fview%2fContactF4.fragment.xml",
+      "CurrencySelectDialog": "CRM_OPPRTNTY%2fview%2fCurrencySelectDialog.fragment.xml",
+      "EmployeeF4": "CRM_OPPRTNTY%2fview%2fEmployeeF4.fragment.xml",
+      "ParticipantsF4": "CRM_OPPRTNTY%2fview%2fParticipantsF4.fragment.xml",
+      "ProcessTypeDialog": "CRM_OPPRTNTY%2fview%2fProcessTypeDialog.fragment.xml",
+      "ProductBasketDialog": "CRM_OPPRTNTY%2fview%2fProductBasketDialog.fragment.xml"
+    },
+    "type": "abaprep",
+    "component": "CRM_OPPRTNTY%2fComponent.js",
+    "configuration": "CRM_OPPRTNTY%2fConfiguration.js",
+    "namespace": "cus.crm.opportunity",
+    "resourceBundle": "i18n/i18n.properties",
+    "system": {
+      "name": "crmmot"
+    }
+  },
+  "deploy": {
+    "destination": "crmmot",
+    "name": "Z_OPPORT_EXT"
+  },
+  "hcpdeploy": {
+    "account": "s0011954237trial",
+    "name": "crmopprtntyextension"
+  }
+}
