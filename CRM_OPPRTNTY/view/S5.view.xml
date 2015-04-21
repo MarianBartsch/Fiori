@@ -1,0 +1,212 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:la="sap.ui.layout" xmlns:ca="sap.ca.ui" xmlns="sap.m"
+	controllerName="cus.crm.opportunity.view.S5" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<!-- //<html:link rel="stylesheet" type="text/css" href="model/mystyle.css"></html:link> -->
+
+	<Page id="createPage" title="{i18n>CREATE_TITLE}" class="sapUiFioriObjectPage"
+		showNavButton="true" navButtonPress="toDetail" enableScrolling="true">
+		<content>
+		<core:ExtensionPoint name="opportunityCreateContentTopExtension"></core:ExtensionPoint>
+			<la:form.SimpleForm id="form1" minWidth="1024"
+				maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+				columnsL="1" columnsM="1" class="editableForm" visible="{path : 'versioning>/BackendSchemaVersion',formatter : 'cus.crm.opportunity.util.Formatter.formatEmployeeRespField'}">
+				<la:content>
+					<Label text="{i18n>TYPE}" id="laTypeInput"></Label>
+					<Text  id="TxtTypeInput" />
+					<Label id="opportunityName_Label" text="{i18n>NAME}*"></Label>
+					<Input id="desc" value="" maxLength="40" placeholder="{i18n>MAX_CHARS}"
+						liveChange="descriptionChanged"></Input>
+					<Label id="opportunityAccount_Label" text="{i18n>ACCOUNT}*">
+					</Label>
+					<Input id="customer" value="" showValueHelp="true"
+						valueHelpRequest="showAccountF4" ></Input>
+					<Label id="opportunityContact_Label" text="{i18n>MAIN_CONTACT}">
+					</Label>
+					<Input value="" showValueHelp="true" id="inputMainContact"
+						valueHelpRequest="showContactF4"></Input>
+                    
+                   <Label id="empRespLabel_S5" text="{i18n>S4.FORM.EMPLOYEE_RESPONSIBLE}" visible="{path : 'versioning>/BackendSchemaVersion',
+					    formatter : 'cus.crm.opportunity.util.Formatter.formatEmployeeRespField'}">
+					</Label>
+					
+					<Input id="inputEmpResponsible_S5" value="" showValueHelp="true" valueHelpRequest="showEmployeeF4"
+					visible="{path : 'versioning>/BackendSchemaVersion',formatter : 'cus.crm.opportunity.util.Formatter.formatEmployeeRespField'}">
+	   			 	</Input>
+					
+					<Label id="opportunityWhtdVolume_Label" text="{i18n>UNWEIGHTED_VOLUME}">
+					</Label>
+					<Input id="volume" value="" maxLength="13" liveChange="volumeChanged"></Input>
+					<Input id="currency" value="" placeholder="{i18n>CURRENCY}"
+						showValueHelp="true" valueHelpRequest="showCurrencyF4"></Input>
+				</la:content>
+			</la:form.SimpleForm>
+			<la:form.SimpleForm id="form2" minWidth="1024"
+				maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+				columnsL="1" columnsM="1" class="editableForm">
+				<la:content>
+					<Label id="opportunityStrtDate_Label" text="{i18n>START_DATE}">
+					</Label>
+					<ca:DatePicker id="datePickerStartDate"></ca:DatePicker>
+					<Label id="opportunityClsDate_Label" text="{i18n>CLOSE_DATE}*">
+					</Label>
+					<ca:DatePicker id="datePickerCloseDate"></ca:DatePicker>
+				</la:content>
+			</la:form.SimpleForm>
+			<la:form.SimpleForm id="form3" minWidth="1024"
+				maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+				columnsL="1" columnsM="1" class="editableForm">
+				<la:content>
+					<Label id="opportunityStatus_Label" text="{i18n>STATUS}">
+					</Label>
+					<Select id="statusdropdown" items="{json>/UserStatuses}"
+						class="pos_input">
+						<items>
+							<core:Item key="{json>UserStatusCode}" text="{json>UserStatusText}">
+							</core:Item>
+						</items>
+					</Select>
+				</la:content>
+			</la:form.SimpleForm>
+
+			<la:form.SimpleForm id="form4" minWidth="1024"
+				maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+				columnsL="1" columnsM="1" class="editableForm">
+				<la:content>
+					<Label id="opportunityStage_Label" text="{i18n>STAGE}">
+					</Label>
+					<Select id="stagedropdown" items="{json>/SalesStages}"
+						class="pos_input">
+						<items>
+							<core:Item key="{json>SalesStageCode}" text="{json>SalesStageDescription}">
+							</core:Item>
+						</items>
+					</Select>
+				</la:content>
+			</la:form.SimpleForm>
+			<la:form.SimpleForm id="form6" minWidth="1024"
+				maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+				columnsL="1" columnsM="1" class="editableForm">
+				<la:content>
+					<Label id="opportunityCos_Label" text="{i18n>CHANCE_OF_SUCCESS}(%)"></Label>
+					<Input id="chanceofSuccess" value="" liveChange="chanceOfSuccessChanged"></Input>
+				</la:content>
+			</la:form.SimpleForm>
+			<la:form.SimpleForm id="form5" minWidth="1024"
+				maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+				columnsL="1" columnsM="1" class="editableForm">
+				<la:content>
+					<Label id="opportunityPriority_Label" text="{i18n>PRIORITY}"></Label>
+					<Select id="priority_val" items="{json>/Priorities}" class="pos_input">
+						<items>
+							<core:Item key="{json>PriorityCode}" text="{json>PriorityText}">
+							</core:Item>
+						</items>
+					</Select>
+				</la:content>
+			</la:form.SimpleForm>
+
+			<la:form.SimpleForm id="form7" minWidth="1024"
+				maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+				columnsL="1" columnsM="1" class="editableForm">
+				<Label id="forecastLabel_S5" text="{i18n>FORECAST}"></Label>
+				<Switch enabled="true" id="Switch"></Switch>
+			</la:form.SimpleForm>
+	<core:ExtensionPoint name="opportunityCreateContentBottomExtension"></core:ExtensionPoint>
+			<Table id="productBasket" items="{json>/Products}" noDataText="{i18n>EMPTY_PROD}"
+				headerText="{i18n>PRODUCT_BASKET}" headerDesign="Standard" class="table_resize">
+				<headerToolbar>
+					<Toolbar id="productToolbar_S5">
+						<Label id="opportunityProductBasket_Label" text="{i18n>PRODUCT_BASKET}">
+						</Label>
+						<ToolbarSpacer id="productSpacer_S5">
+						</ToolbarSpacer>
+						<Button id="opportunityAddProd_Button" icon="sap-icon://add" text="{path : 'i18n>ADD_PROD', formatter : 'cus.crm.opportunity.util.Formatter.formatAddMoreProductsText'}" press="onAddProduct">
+						</Button>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+				<core:ExtensionPoint name="opportunityProductTabColoumExtension"></core:ExtensionPoint>
+					<Column id="basketColumn1_S5" vAlign="Middle" width="35%">
+						<header>
+							<Label id="opportunityProdBasketProd_Label" text="{i18n>PRODUCT}" design="Bold"></Label>
+						</header>
+					</Column>
+
+					<Column id="basketColumn2_S5" vAlign="Middle" width="20%" hAlign="Right">
+						<header>
+							<Label  id="opportunityProdBasketQuant_Label" text="{i18n>QUANTITY}" design="Bold"></Label>
+						</header>
+					</Column>
+					
+					<Column id="basketColumn3_S5" vAlign="Middle" width="15%" minScreenWidth="Tablet"
+						demandPopin="true" hAlign="Right">
+						<header>
+							<Label id="unitPriceLabel_S5" text="{i18n>UNIT_PRICE}" design="Bold"></Label>
+						</header>
+					</Column>
+
+					<Column id="basketColumn4_S5" vAlign="Middle" width="20%" hAlign="Right"
+						minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label id="vol_S5" text="{i18n>VOLUME}" design="Bold"></Label>
+						</header>
+					</Column>
+
+					<Column  id="basketColumn5_S5" vAlign="Middle" width="10%" minScreenWidth="Tablet" 
+					hAlign="Right" demandPopin="true">
+						<header>
+						</header>
+					</Column>
+					<core:ExtensionPoint name="opportunityProductTabColoumendExtension"></core:ExtensionPoint>
+				</columns>
+				<items>
+					<ColumnListItem id="basketTemplate_S5">
+						<cells>
+						<core:ExtensionPoint name="opportunityProductTabCellsExtension"></core:ExtensionPoint>
+							<la:VerticalLayout id="productBasketVLayout_S5" hAlign="Left">
+								<la:content>
+									<Label id="prodname" design="Bold"
+										text="{path : 'json>ProductGuid', formatter : 'cus.crm.opportunity.util.Formatter.formatProductName'}"></Label>
+									<Label id="productClassificationValue_S5"
+										text="{path: 'json>ProductGuid',formatter : 'cus.crm.opportunity.util.Formatter.formatProdClassification'}"></Label>
+								</la:content>
+							</la:VerticalLayout>
+							<la:HorizontalLayout id="basketHLayout_S5" width="150px" custom:field="QUANTITY">
+								<la:content>
+									<Input  width="75px" id="qty" value="{json>Quantity}"
+										liveChange="quantityChanged" class="numberRTL"></Input>
+
+									<Text id="unit1" text="{json>Unit}" class="UnitPadding"></Text>
+								</la:content>
+							</la:HorizontalLayout>
+							<ObjectNumber custom:field="NETVALUE" id="netValue_S5" number="{json>NetValue}" numberUnit="{json>CurrencyCode}" />
+							<Input width="75px" id="expectedNetValue_S5" 
+										value="{json>TotalExpectedNetValue}"
+										editable="true" liveChange="volumeChanged" class="numberRTL">
+										</Input>
+							
+							<Button id="cancel" icon="sap-icon://sys-cancel-2" type="Transparent"
+								press="deleteProduct"></Button>
+								
+						<core:ExtensionPoint name="opportunityProductTabCellsEndExtension"></core:ExtensionPoint>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			
+		</content>
+	</Page>
+</core:View>
